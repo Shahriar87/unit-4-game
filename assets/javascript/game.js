@@ -33,12 +33,19 @@ var crystalIds = ["crystal1", "crystal2", "crystal3", "crystal4"]
 
 
       function compChoice(){
-        var randScore = Math.floor(Math.random() * (101-35)) + 35;
+        var randScore = Math.floor(Math.random() * (121-19)) + 19;
         return randScore;
     
-    }
+      }
+
+      function crystalRandom(){
+        var crystalValues = Math.floor(Math.random() * (13-1)) + 1;
+        return crystalValues;
+      }
 
 
       $("#randScore").text(compChoice());
+
+      
 
     
