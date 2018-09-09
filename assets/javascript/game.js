@@ -3,11 +3,22 @@ var crystal2 = "assets/images/crystal2.jpg";
 var crystal3 = "assets/images/crystal3.jpg";
 var crystal4 = "assets/images/crystal4.jpg";
 
-
 var crystals = [crystal1, crystal2, crystal3, crystal4];
 
 
 var crystalIds = ["crystal1", "crystal2", "crystal3", "crystal4"]
+
+var crystalValues1 
+var crystalValues2 
+var crystalValues3 
+var crystalValues4 
+
+var crystalValues = 0;
+var win = 0;
+var loss = 0;
+
+var randScore = Math.floor(Math.random() * (121-19)) + 19;
+
 
       // MAJOR TASK #1: DYNAMICALLY CREATE CRYSTAL IMAGES as buttons
       // =================================================================================
@@ -31,37 +42,109 @@ var crystalIds = ["crystal1", "crystal2", "crystal3", "crystal4"]
 
       }
 
-
       function compChoice(){
-        var randScore = Math.floor(Math.random() * (121-19)) + 19;
-        return randScore;
-    
+        randScore = Math.floor(Math.random() * (121-19)) + 19;
+        $("#randScore").text(randScore);
+        console.log(randScore);
+
       }
 
       function crystalRandom(){
-        var crystalValues1 = Math.floor(Math.random() * (13-1)) + 1;
-        var crystalValues2 = Math.floor(Math.random() * (13-1)) + 1;
-        var crystalValues3 = Math.floor(Math.random() * (13-1)) + 1;
-        var crystalValues4 = Math.floor(Math.random() * (13-1)) + 1;
 
-        var crystalValues = crystalValues1 + crystalValues2 + crystalValues3 + crystalValues4;
+        var arr = []
+
+        while(arr.length < 4){
+            var randomnumber = Math.floor(Math.random() * (13-1)) + 1;
+            if(arr.indexOf(randomnumber) > -1) continue;
+            arr[arr.length] = randomnumber;
+        }
+        
+        console.log(arr)
+        
+        crystalValues1 = arr[0];
+        crystalValues2 = arr[1];
+        crystalValues3 = arr[2];
+        crystalValues4 = arr[3];
 
         console.log(crystalValues1);
         console.log(crystalValues2);
         console.log(crystalValues3);
         console.log(crystalValues4);
-        console.log(crystalValues);
 
-
-        return crystalValues;
       }
 
+      crystalRandom();
 
-      $("#randScore").text(compChoice());
+     
+    
 
-      $("#totalScore").text(crystalRandom());
+      $("#randScore").text(randScore);  
 
+      $("#crystal1").on("click", function() {
+
+        crystalValues += crystalValues1
+
+        $("#totalScore").text(crystalValues);
+
+        checkResult()
+
+      });
+
+      $("#crystal2").on("click", function() {
+
+        crystalValues += crystalValues2
+
+        $("#totalScore").text(crystalValues);
+
+        checkResult()
+
+      });
+
+      $("#crystal3").on("click", function() {
+
+        crystalValues += crystalValues3
+
+        $("#totalScore").text(crystalValues);
+
+        checkResult()
+
+      });
+
+      $("#crystal4").on("click", function() {
+
+        crystalValues += crystalValues4
+
+        $("#totalScore").text(crystalValues);
+
+        checkResult()
+
+      });
+
+      console.log(randScore);
+
+      function checkResult(){
+        if (crystalValues === randScore){
+          win ++
+          $("#win").text(win);
+          compChoice();
+          crystalRandom();
+          crystalValues = 0;
+        } else if (crystalValues > randScore){
+          loss ++
+          $("#loss").text(loss);
+          compChoice();
+          crystalRandom();
+          crystalValues = 0;
+        }  
+
+      }
 
       
+
+
+
+
+
+
 
     
