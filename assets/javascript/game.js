@@ -39,12 +39,28 @@ var crystalIds = ["crystal1", "crystal2", "crystal3", "crystal4"]
       }
 
       function crystalRandom(){
-        var crystalValues = Math.floor(Math.random() * (13-1)) + 1;
+        var crystalValues1 = Math.floor(Math.random() * (13-1)) + 1;
+        var crystalValues2 = Math.floor(Math.random() * (13-1)) + 1;
+        var crystalValues3 = Math.floor(Math.random() * (13-1)) + 1;
+        var crystalValues4 = Math.floor(Math.random() * (13-1)) + 1;
+
+        var crystalValues = crystalValues1 + crystalValues2 + crystalValues3 + crystalValues4;
+
+        console.log(crystalValues1);
+        console.log(crystalValues2);
+        console.log(crystalValues3);
+        console.log(crystalValues4);
+        console.log(crystalValues);
+
+
         return crystalValues;
       }
 
 
       $("#randScore").text(compChoice());
+
+      $("#totalScore").text(crystalRandom());
+
 
       
 
