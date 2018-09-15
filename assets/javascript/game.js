@@ -84,8 +84,6 @@ var randScore = Math.floor(Math.random() * (121-19)) + 19;
 
         crystalValues += crystalValues1
 
-        $("#totalScore").text(crystalValues);
-
         checkResult()
 
       });
@@ -93,8 +91,6 @@ var randScore = Math.floor(Math.random() * (121-19)) + 19;
       $("#crystal2").on("click", function() {
 
         crystalValues += crystalValues2
-
-        $("#totalScore").text(crystalValues);
 
         checkResult()
 
@@ -104,8 +100,6 @@ var randScore = Math.floor(Math.random() * (121-19)) + 19;
 
         crystalValues += crystalValues3
 
-        $("#totalScore").text(crystalValues);
-
         checkResult()
 
       });
@@ -113,8 +107,6 @@ var randScore = Math.floor(Math.random() * (121-19)) + 19;
       $("#crystal4").on("click", function() {
 
         crystalValues += crystalValues4
-
-        $("#totalScore").text(crystalValues);
 
         checkResult()
 
@@ -136,7 +128,7 @@ var randScore = Math.floor(Math.random() * (121-19)) + 19;
           crystalRandom();
           crystalValues = 0;
         }  
-
+        $("#totalScore").text(crystalValues);
       }
 
       
