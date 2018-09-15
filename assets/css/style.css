@@ -1,12 +1,51 @@
-/* 
-#randScore{
-    float: left;
+
+body {
+    
+    background-image: url('https://images.alphacoders.com/507/507347.jpg');
+
 }
 
-#WinLoss{
-    float: left;
+.container {
+    font-family: cursive;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#crystals{
-    clear: left;
-} */
+h2 {
+    font-size: 50px;
+    font-family: "Verdana, Geneva, Tahoma, sans-serif";
+    text-anchor: middle;
+    color: white;
+    background: brown;
+    width: 600px;
+    text-align: center;
+}
+
+p {
+    font-family: cursive;
+    background: palegoldenrod;
+    width: 600px;
+}
+
+
+#randScore {
+/* border: 5px solid rgb(0, 128, 128); */
+    background: lightcoral;
+    width: 600px;
+    margin-right: 30px;
+    font-size: 25px;
+}
+
+div{
+    width: 600px;
+    height: auto;
+}
+
+#totalScore {
+    border: 5px solid rgb(0, 128, 128);
+    background: lightcoral;
+    width: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+}
